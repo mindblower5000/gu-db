@@ -18,5 +18,5 @@ insert into salaries VALUE (10001, 999999, '1997-08-03',	'1998-08-03');
 BEGIN;
 SET @emp = (SELECT emp_no FROM `salaries` WHERE `salary` > 800000);
 SET @sal = 1000000;
-UPDATE `salaries` SET `salary`=@bon WHERE `emp_no` = @emp;
+UPDATE `salaries` SET `salary`=@sal WHERE `emp_no` = @emp;
 COMMIT;

@@ -1,0 +1,1 @@
+CREATE USER 'ai'@'%' IDENTIFIED BY '1nlxrt@Mysql';

@@ -1,0 +1,14 @@
+1. Создать нового пользователя и задать ему права доступа на базу данных «Страны и города мира».
+
+CREATE USER IF NOT EXISTS 'newuser'@'%' IDENTIFIED WITH mysql_native_password BY '12345678==';
+
+GRAND SELECT, DELETE, UPDATE, INSERT ON `city_and_country`.* TO 'newuser'@'%';
+
+FLUSH PRIVILEGES;
+
+
+2. Сделать резервную копию базы, удалить базу и пересоздать из бекапа.
+
+mysqldump -u root -p12345678== city_and_country --routines > /var/backup/back_`data` '%Y-%m-%d'.sql
+
+mysql - root -p12345678== city_and_country < /var/backup/2020-08-10.sql
